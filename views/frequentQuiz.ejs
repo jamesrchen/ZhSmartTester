@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <%- include imports.ejs %>
+    <meta name="referrer" content="no-referrer">
+</head>
+<body style="height:100vh;width:100vw;">
+    <div id="app">
+        <div class="row mt100">
+            <div class="col s1 m2">
+                <span></span>
+            </div>
+            <div class="col s10 m8">
+                <div class="card blue-grey darken-1">
+                    <div class="card-image">
+<!--                        <a class="btn-floating pulse halfway-fab waves-effect waves-light cyan" target="_blank" :href="'https://translate.google.com/translate_tts?ie=UTF-8&tl=zh&client=tw-ob&q='+ word"><i class="fa fa-volume-up" aria-hidden="true"></i></a>-->
+                        <a class="btn-floating pulse halfway-fab waves-effect waves-light cyan" onclick="tts(app.word)"><i class="fa fa-volume-up" aria-hidden="true"></i></a>
+                    </div>
+
+                    <div class="card-action">
+                        <div class="card-content white-text">
+                            <span class="card-title">{{rank}}</span>
+                            <p>{{word}}</p>
+                        </div>
+                        <div class="card-action">
+                            <a onclick="traverse(-10)"><i class="fa fa-backward" aria-hidden="true"></i></a>
+                            <a onclick="traverse(-1)"><i class="fa fa-caret-left" aria-hidden="true"></i></a>
+                            <a class="activator"><i class="fa fa-book" aria-hidden="true"></i></a>
+                            <a onclick="traverse(1)"><i class="fa fa-caret-right" aria-hidden="true"></i></a>
+                            <a onclick="traverse(10)"><i class="fa fa-forward" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                    <div class="card-reveal">
+                        <span class="card-title">{{pinyin}}</span>
+                        <p>{{meaning}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+<!--        <iframe id="ttsiframe">-->
+
+<!--        </iframe>-->
+    </div>
+</body>
+<script src="/javascripts/frequentQuiz.js"></script>
+</html>
